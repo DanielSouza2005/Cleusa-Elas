@@ -47,6 +47,16 @@ $sqlContato = mysqli_query($con, $sqlContato) or die("Erro na sqlContato!");
 
 $dadosContato = mysqli_fetch_array($sqlContato);
 
+$sqlCores = "select * from tb_cor";
+$sqlCores = mysqli_query($con, $sqlCores) or die("Erro na sqlCores!");
+
+$dadosCores = mysqli_fetch_array($sqlCores);
+
+$sqlSobre = "select * from tb_sobre";
+$sqlSobre = mysqli_query($con, $sqlSobre) or die("Erro na sqlSobre!");
+
+$dadosSobre = mysqli_fetch_array($sqlSobre);
+
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +66,8 @@ $dadosContato = mysqli_fetch_array($sqlContato);
 	<title>Cleusa & Elas: Cabelo e Estética</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="images/favicon.png" rel="icon">
 
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:500,600,700&display=swap" rel="stylesheet">
@@ -83,6 +95,9 @@ $dadosContato = mysqli_fetch_array($sqlContato);
 
 	<link rel="canonical" href="https://demo-basic.adminkit.io/icons-feather.html" />
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 
 <style type="text/css">
@@ -91,24 +106,187 @@ $dadosContato = mysqli_fetch_array($sqlContato);
 	}
 
 	.menu-link {
-		padding-top: 4%;
+		padding-top: 3.5%;
 	}
 
 	.ftco-navbar-light.scrolled.awake .menu-acesso {
-		padding-top: 0.5% !important;
+		padding-top: 0.75% !important;
 	}
 
 	.menu-acesso {
 		padding-left: 0px !important;
-		padding-top: 2.5% !important;
+		padding-top: 2% !important;
 		padding-bottom: 0px !important;
+	}
+
+	.ftco-navbar-light .navbar-nav>.nav-item.active>a {
+		color: <?php echo $dadosCores['cor_principal']; ?>;
+	}
+
+	@media (max-width: 991.98px) {
+		.ftco-navbar-light .navbar-nav>.nav-item.active>a {
+			color: #fff;
+		}
+	}
+
+	.ftco-navbar-light .navbar-nav>.nav-item>.nav-link:hover {
+		color: <?php echo $dadosCores['cor_principal']; ?>;
+	}
+
+
+	.ftco-navbar-light.scrolled .nav-item.active>a {
+		color: <?php echo $dadosCores['cor_apoio']; ?> !important;
+	}
+
+	.slider-text .subheading {
+		font-size: 16px;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: <?php echo $dadosCores['cor_principal']; ?>;
+		letter-spacing: 2px;
+	}
+
+	.btn.btn-primary.btn-outline-primary:hover {
+		border: 3px solid transparent !important;
+		background: <?php echo $dadosCores['cor_principal']; ?> !important;
+		color: #fff !important;
+	}
+
+	.btn.btn-primary.btn-outline-primary {
+		border: 3px solid <?php echo $dadosCores['cor_principal']; ?> !important;
+		background: transparent !important;
+		color: <?php echo $dadosCores['cor_principal']; ?> !important;
+	}
+
+	.team .img:after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		content: '';
+		background: <?php echo $dadosCores['cor_principal'] . '99'; ?>;
+		opacity: 0;
+		-moz-transition: all 0.3s ease;
+		-o-transition: all 0.3s ease;
+		-webkit-transition: all 0.3s ease;
+		-ms-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+	}
+
+	a {
+		-webkit-transition: .3s all ease;
+		-o-transition: .3s all ease;
+		transition: .3s all ease;
+		color: <?php echo $dadosCores['cor_principal']; ?>;
+	}
+
+	a:hover,
+	a:focus {
+		text-decoration: none;
+		color: <?php echo $dadosCores['cor_titulos']; ?>;
+		outline: none !important;
+	}
+
+	.project:after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		content: '';
+		background: <?php echo $dadosCores['cor_principal'] . '99'; ?>;
+		opacity: 0;
+		z-index: 1;
+		-moz-transition: all 0.3s ease;
+		-o-transition: all 0.3s ease;
+		-webkit-transition: all 0.3s ease;
+		-ms-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+	}
+
+	.form-control {
+		height: 52px !important;
+		background: transparent !important;
+		color: #000000 !important;
+		font-size: 18px;
+		border-radius: 5px;
+		-webkit-box-shadow: none !important;
+		box-shadow: none !important;
+		border: 2px solid <?php echo $dadosCores['cor_principal']; ?> !important;
+	}
+
+
+	.appointment-form .form-group .btn-primary {
+		display: block;
+		background: <?php echo $dadosCores['cor_principal']; ?> !important;
+		border: 1px solid <?php echo $dadosCores['cor_principal']; ?> !important;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		-ms-border-radius: 0;
+		border-radius: 0;
+		padding-left: 30px !important;
+		padding-right: 30px !important;
+		color: #fff !important;
+		margin: 0 auto;
+		margin-top: 20px;
+	}
+
+	.btn.btn-primary {
+		background: <?php echo $dadosCores['cor_principal']; ?> !important;
+		border: 1px solid <?php echo $dadosCores['cor_principal']; ?> !important;
+		color: #fff !important;
+	}
+
+	.btn.btn-primary:hover {
+		border: 1px solid <?php echo $dadosCores['cor_titulos']; ?> !important;
+		background: <?php echo $dadosCores['cor_titulos']; ?> !important;
+		color: <?php echo $dadosCores['cor_titulos']; ?>;
+	}
+
+	.ftco-navbar-light.scrolled.awake .menu_logo {
+		content: url(images/logo2.png);
+		width: 200px;
+	}
+
+	h1,
+	h2,
+	.h1,
+	.h2 {
+		line-height: 1.5;
+		color: <?php echo $dadosCores['cor_titulos']; ?>;
+		font-weight: 400;
+	}
+
+	h3,
+	h4,
+	h5,
+	.h3,
+	.h4,
+	.h5 {
+		line-height: 1.5;
+		color: black;
+		font-weight: 400;
+	}
+
+	.corFundo {
+		background-color: #fff4fb;
+	}
+
+	ion-icon {
+		color: white;
 	}
 </style>
 
-<body onload="carregaDiaAtual();">
+<body>
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.html"><span class="flaticon-scissors-in-a-hair-salon-badge"></span>Cleusa & Elas</a>
+			<a class="navbar-brand" href="index.php">
+				<span>
+					<img src="images/favicon.png" width="40px">
+				</span>
+				<img src="images/logo.png" style="padding-bottom: 4%;" class="menu_logo" width="200px">
+			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
@@ -116,16 +294,18 @@ $dadosContato = mysqli_fetch_array($sqlContato);
 			<div class="collapse navbar-collapse menu" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active"><a href="#home" class="nav-link">Home</a></li>
+					<li class="nav-item"><a href="#about" class="nav-link">About</a></li>
 					<li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
 					<li class="nav-item"><a href="#team" class="nav-link">Team</a></li>
 					<li class="nav-item"><a href="#gallery" class="nav-link">Galery</a></li>
-					<li class="nav-item"><a href="#booking" class="nav-link">Scheduling</a></li>
+					<li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+					<!--<li class="nav-item"><a href="#booking" class="nav-link">Scheduling</a></li>-->
 					&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
 					<a href="index.php" class="menu-link">
-						<img class="botao-ingles" src="images/BR.png">
+						<img class="botao-ingles" src="images/br.png">
 					</a>
 					&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
-					<a class="navbar-brand menu-acesso" href="admin/static/login.php">
+					<a class="navbar-brand menu-acesso" href="admin/static/login.php" target="_blank">
 						<i class="align-middle" data-feather="log-in"></i>
 					</a>
 
@@ -137,21 +317,43 @@ $dadosContato = mysqli_fetch_array($sqlContato);
 
 	<section class="hero-wrap js-fullheight" id="home" style="background-image: url(admin/static/home/<?php echo $dadosHome['hom_foto']; ?>);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
-		<div class="container">
-			<div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
-				<div class="col-lg-12 ftco-animate d-flex align-items-center">
-					<div class="text text-center">
-						<span class="subheading"><?php echo $dadosHome['hom_fraseEN']; ?></span>
-						<h1 class="mb-4">Cleusa & Elas</h1>
-						<p><a href="#booking" class="btn btn-primary btn-outline-primary px-4 py-2">Schedule now</a></p>
+			<div class="container">
+				<div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
+					<div class="col-lg-12 ftco-animate d-flex align-items-center">
+						<div class="text text-center">
+							<span class="subheading"><?php echo $dadosHome['hom_fraseEN']; ?></span>
+							<h1 style="margin-bottom: 0vh;">Cleusa & Elas</h1>
+							<p style="color:#fff; font-size: 22px;">Hair and Aesthetics</p>
+							<p><a href="#about" class="btn btn-primary btn-outline-primary px-4 py-2">Know More</a></p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		</div>
+		<section class="ftco-section ftco-no-pb ftco-no-pt corFundo" id="about" style="padding-top: 3% !important;"> 
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 py-md-5 pb-5 wrap-about pb-md-5 ftco-animate fadeInUp ftco-animated">
+						<div class="testimony-img">
+							<img src="admin/static/sobre/<?php echo $dadosSobre['sob_foto']; ?>" class="img-fluid" style="width: 100%;">
+						</div>
+					</div>
+					<div class="col-md-6 py-md-5 pb-5 wrap-about pb-md-5 ftco-animate fadeInUp ftco-animated">
+						<div class="heading-section mb-4 mt-md-5">
+							<h2 class="mb-4"><?php echo $dadosSobre['sob_tituloEN']; ?></h2>
+						</div>
+						<div class="pb-md-5">
+							<p style="text-align: justify; text-justify: inter-word;"><?php echo $dadosSobre['sob_texto1EN']; ?>
+							</p>
+							<p style="text-align: justify; text-justify: inter-word;"><?php echo $dadosSobre['sob_texto2EN']; ?>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-
-		<section class="services-section ftco-section" id="services">
+		<section class="services-section ftco-section corFundo" id="services">
 			<div class="container">
 				<div class="row justify-content-center pb-3">
 					<div class="col-md-10 heading-section text-center ftco-animate">
@@ -178,7 +380,7 @@ $dadosContato = mysqli_fetch_array($sqlContato);
 			</div>
 		</section>
 
-		<section class="ftco-section ftco-team" id="team">
+		<section class="ftco-section ftco-team corFundo" id="team">
 			<div class="container-fluid px-md-5">
 				<div class="row justify-content-center pb-3">
 					<div class="col-md-10 heading-section text-center ftco-animate">
@@ -188,7 +390,7 @@ $dadosContato = mysqli_fetch_array($sqlContato);
 				</div>
 				<div class="row">
 					<div class="col-md-12 ftco-animate">
-						<div class="carousel-team owl-carousel">
+						<div class="carousel-team owl-carousel" style=" display: flex; justify-content: center;">
 							<?php while ($dadosTime = mysqli_fetch_array($sqlTime)) { ?>
 								<div class="item">
 									<a href="#" class="team text-center">
@@ -204,7 +406,7 @@ $dadosContato = mysqli_fetch_array($sqlContato);
 			</div>
 		</section>
 
-		<section class="ftco-section ftco-no-pt ftco-no-pb" id="gallery">
+		<section class="ftco-section ftco-no-pt ftco-no-pb corFundo" id="gallery">
 			<div class="container">
 				<div class="row no-gutters justify-content-center mb-5 pb-2">
 					<div class="col-md-6 text-center heading-section ftco-animate">
@@ -233,7 +435,7 @@ $dadosContato = mysqli_fetch_array($sqlContato);
 				</div>
 			</div>
 
-			<section class="ftco-section ftco-booking bg-light" id="booking">
+			<!--<section class="ftco-section ftco-booking bg-light" id="booking">
 				<div class="container ftco-relative">
 					<div class="row justify-content-center pb-3">
 						<div class="col-md-10 heading-section text-center ftco-animate">
@@ -328,32 +530,37 @@ $dadosContato = mysqli_fetch_array($sqlContato);
 						</div>
 					</div>
 				</div>
-			</section>
+			</section>-->
 
-			<footer class="ftco-footer ftco-section">
+			<footer class="ftco-footer ftco-section" id="contact">
 				<div class="container">
 					<div class="row mb-5">
 						<div class="col-md">
 							<div class="ftco-footer-widget mb-4">
 								<h2 class="ftco-heading-2 logo">Cleusa & Elas </h2>
 								<p>OUR GOAL IS TO MAKE YOU FEEL CONFIDENT!</br>
-									Follow us on our social networks.</p>
+									Follow us on our social networks :)</p>
 								<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-									<li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-									<li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-									<li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+									<li class="ftco-animate"><a href="https://linktr.ee/cleusaeelas" target="_blank"><span class="icon-link"></span></a></li>
+									<li class="ftco-animate"><a href="https://www.instagram.com/cleusa_elas/" target="_blank"><span class="icon-instagram"></span></a></li>
+									<li class="ftco-animate"><a href="https://wa.me/5519996283135" target="_blank"><span class="icon-whatsapp"></span></a></li>
 								</ul>
 							</div>
 						</div>
 						<div class="col-md">
 							<div class="ftco-footer-widget mb-4">
-								<h2 class="ftco-heading-2">Have any questions?</h2>
+								<h2 class="ftco-heading-2">Wish to schedule an appointment?</h2>
 								<div class="block-23 mb-3">
 									<ul>
 										<li><span class="icon icon-map-marker"></span><span class="text"><?php echo $dadosContato['con_enderecoEN'] ?></span>
 										</li>
-										<li><a href="#"><span class="icon icon-phone"></span><span class="text"><?php echo $dadosContato['con_telefone'] ?></span></a></li>
-										<li><a href="#"><span class="icon icon-envelope"></span><span class="text"><?php echo $dadosContato['con_email'] ?></span></a></li>
+										<li><a href="https://wa.me/5519996283135" target="_blank">
+												<div style="padding-right: 20px;">
+													<ion-icon name="logo-whatsapp"></ion-icon>
+												</div>
+												<span class="text"><?php echo $dadosContato['con_telefone'] ?></span>
+											</a></li>
+										<li><span class="icon icon-envelope"></span><span class="text"><?php echo $dadosContato['con_email'] ?></span></li>
 									</ul>
 								</div>
 							</div>
@@ -378,7 +585,7 @@ $dadosContato = mysqli_fetch_array($sqlContato);
 			<!-- loader -->
 			<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
 					<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-					<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
+					<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F8A1E0" />
 				</svg></div>
 
 
@@ -424,7 +631,7 @@ $dadosContato = mysqli_fetch_array($sqlContato);
 
 				})
 			</script>
-			<script>
+			<!--<script>
 				function carregaDiaAtual() {
 					var Hoje = new Date(Date());
 					var dia = Hoje.getDate().toString().padStart(2, '0');
@@ -504,7 +711,7 @@ $dadosContato = mysqli_fetch_array($sqlContato);
 						return false;
 					}
 				}
-			</script>
+			</script> -->
 
 </body>
 

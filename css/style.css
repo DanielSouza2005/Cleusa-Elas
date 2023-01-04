@@ -4,6 +4,18 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
+/*@font-face {
+  font-family: 'Boiling-BlackDemo';
+  src: url(../fonts/Boiling-BlackDemo.ttf) format('truetype');
+}
+
+
+@font-face {
+  font-family: 'Geometric 415';
+  src: url(../fonts/geometric_415_black_bt.ttf) format('truetype');
+}*/
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -11726,7 +11738,7 @@ body {
   font-size: 16px;
   line-height: 1.8;
   font-weight: 400;
-  color: gray;
+  color: #444444;
 }
 
 body.menu-show {
@@ -11734,21 +11746,6 @@ body.menu-show {
   position: fixed;
   height: 100%;
   width: 100%;
-} 
-
-h1,
-h2,
-h3,
-h4,
-h5,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5 {
-  line-height: 1.5;
-  color: black;
-  font-weight: 400;
 }
 
 .text-primary {
@@ -11967,7 +11964,7 @@ h5,
   color: #bf925b !important;
 }
 
-.ftco-navbar-light.scrolled.awake  {
+.ftco-navbar-light.scrolled.awake {
   margin-top: 0px;
   -webkit-transition: .3s all ease-out;
   -o-transition: .3s all ease-out;
@@ -12043,7 +12040,7 @@ h5,
   right: 0;
   bottom: 0;
   content: '';
-  opacity: .6;
+  opacity: 0.4;
   background: #000000;
 }
 
@@ -12074,8 +12071,7 @@ h5,
 
 .slider-text h1 {
   font-size: 7vw;
-  font-family: "Barlow Condensed", sans-serif;
-  text-transform: uppercase;
+  font-family: "Boiling-BlackDemo", sans-serif;
   line-height: 1;
   font-weight: 700;
   color: #fff;
@@ -12334,7 +12330,7 @@ h3.vr {
   display: block;
   overflow: hidden;
   z-index: 0;
-} 
+}
 
 .project img {
   -webkit-transform: scale(1);
@@ -12873,7 +12869,7 @@ textarea.form-control {
 
 .team .img {
   width: 100%;
-  height: 350px;
+  height: 425px;
   margin: 0 auto;
   margin-bottom: 20px;
   position: relative;
@@ -13023,11 +13019,11 @@ textarea.form-control {
   margin: 5px;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0) !important;
-  border: 1px solid #bf925b;
+  border: 1px solid #f8a1e0;
 }
 
 .ftco-team .owl-dots .owl-dot.active {
-  background: #bf925b !important;
+  background: #f8a1e0 !important;
 }
 
 .ftco-footer {

@@ -11,7 +11,7 @@
                 </a>
 
                 <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                    <img src="../img/avatars/hairdresser.jpg" class="avatar img-fluid rounded me-1" alt="Cleusa" /> <span class="text-dark">Cleusa & Elas</span>
+                    <img src="../img/avatars/hairdresser.jpg" class="avatar img-fluid rounded me-1" alt="Cleusa" /> <span class="text-dark"><?php echo $_SESSION['nome'] ?></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
                     <a class="dropdown-item" href="../logout.php">Sair</a>

@@ -1,7 +1,9 @@
 <nav id="sidebar" class="sidebar js-sidebar">
     <div class="sidebar-content js-simplebar">
         <a class="sidebar-brand" href="../home/home.php">
-            <span class="align-middle">Cleusa & Elas</span>
+            <span class="align-middle">
+                <img src="../../../images/logo.png" width="175px">
+            </span>
         </a>
 
         <ul class="sidebar-nav">
@@ -30,6 +32,13 @@
                     <i class="align-middle" data-feather="home"></i> <span class="align-middle">Página Inicial</span>
                 </a>
             </li>
+
+            <li class="sidebar-item <?php if (strpos($_SERVER['REQUEST_URI'], "sobre.php")) echo "active"; else if (strpos($_SERVER['REQUEST_URI'], "atualizar_sobre.php")) echo "active"; ?>">
+                <a class="sidebar-link" href="../sobre/consulta_sobre.php">
+                    <i class="align-middle" data-feather="book"></i> <span class="align-middle">Sobre</span>
+                </a>
+            </li>
+
 
             <li class="sidebar-item <?php if (strpos($_SERVER['REQUEST_URI'], "servicos.php")) echo "active"; else if (strpos($_SERVER['REQUEST_URI'], "atualizar_servicosG.php")) echo "active"; ?>">
                 <a class="sidebar-link" href="../servicos/consulta_servicos.php">
@@ -62,6 +71,12 @@
             <li class="sidebar-item <?php if (strpos($_SERVER['REQUEST_URI'], "consulta_homeEN")) echo "active"; else if (strpos($_SERVER['REQUEST_URI'], "atualizar_homeEN.php")) echo "active"; ?>">
                 <a class="sidebar-link" href="../home/consulta_homeEN.php">
                     <i class="align-middle" data-feather="home"></i> <span class="align-middle">Home</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item <?php if (strpos($_SERVER['REQUEST_URI'], "sobreEN.php")) echo "active"; else if (strpos($_SERVER['REQUEST_URI'], "atualizar_sobreEN.php")) echo "active"; ?>">
+                <a class="sidebar-link" href="../sobre/consulta_sobreEN.php">
+                    <i class="align-middle" data-feather="book"></i> <span class="align-middle">About</span>
                 </a>
             </li>
 
